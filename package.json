@@ -1,0 +1,15 @@
+{
+  "name": "rxios-questions",
+  "version": "1.0.0",
+  "description": "iOS interview questions",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "srxboys",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.8.0"
+  }
+}
