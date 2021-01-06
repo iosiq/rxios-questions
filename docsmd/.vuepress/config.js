@@ -18,7 +18,7 @@ module.exports = {
   description, // 百度搜索 seo
 
   // 部署站点的基础路径 https://vuepress.vuejs.org/zh/config/#base
-  base: '/rxios-questions/', // 项目名 in GitHub/Gitee
+  base: '/', // 项目名 in GitHub/Gitee
 
   head: [
     // pwa https://vuepress.vuejs.org/zh/plugin/official/plugin-pwa.html#%E4%BD%BF%E7%94%A8
@@ -114,7 +114,7 @@ module.exports = {
           sidebarDepth: 2,    // 可选的, 默认值是 1
           children: [
             '',
-            '/guide/tabbar',
+            '/guide/test',
           ],
         },
         // {
