@@ -7,8 +7,8 @@
  * https://www.vuepress.cn/zh/theme/default-theme-config.html#algolia-%E6%90%9C%E7%B4%A2
  */
 const path = require("path")
-const rootpath = path.dirname(__dirname) // 执行一次dirname将目录定位到docs目录
-const traversed = require('./utils/traversed');
+// const rootpath = path.dirname(__dirname) // 执行一次dirname将目录定位到docs目录
+// const traversed = require('./utils/traversed');
 
 const GitHubUrl = 'https://github.com/srxboys/rxios-questions'
 const description = 'ios|object-c|swift|面试题|笔试题';
@@ -18,7 +18,7 @@ module.exports = {
   description, // 百度搜索 seo
 
   // 部署站点的基础路径 https://vuepress.vuejs.org/zh/config/#base
-  base: '/', // 项目名 in GitHub/Gitee
+  base: '/rxios-questions/', // 项目名 in GitHub/Gitee
 
   head: [
     // pwa https://vuepress.vuejs.org/zh/plugin/official/plugin-pwa.html#%E4%BD%BF%E7%94%A8
