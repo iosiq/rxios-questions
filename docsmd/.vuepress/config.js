@@ -14,7 +14,7 @@ const GitHubUrl = 'https://github.com/srxboys/rxios-questions'
 const description = 'ios|object-c|swift|面试题|笔试题';
 
 module.exports = {
-  title: 'iOS questions',
+  title: 'IQ',
   description, // 百度搜索 seo
 
   // 部署站点的基础路径 https://vuepress.vuejs.org/zh/config/#base
@@ -57,13 +57,13 @@ module.exports = {
     // 刷新
     ['@vuepress/pwa', {
       serviceWorker: true,
-      updatePopup: true,
-      // updatePopup: {
-      //   '/': {
-      //     message: "发现新内容可用",
-      //     buttonText: "刷新"
-      //   },
-      // }
+      // updatePopup: true,
+      updatePopup: {
+        '/': {
+          message: "发现新内容可用",
+          buttonText: "刷新"
+        },
+      }
     }],
   ],
 
@@ -75,7 +75,7 @@ module.exports = {
     repoLabel: 'GitHub',
     docsDir: 'docs',
     // // 假如文档放在一个特定的分支下：
-    docsBranch: 'gh-pages',
+    docsBranch: 'dev',
     editLinks: true,
     // // // 默认为 "Edit this page"
     editLinkText: '帮助改善此页面！',
@@ -85,7 +85,7 @@ module.exports = {
     lastUpdated: '上次更新', // string | boolean
     nav: [
       { text: '指南', link: '/guide/' },
-      { text: 'Object-c', link: '/oc/' },
+      { text: 'Object-C', link: '/oc/' },
       { text: 'Swift', link: '/swift/' },
       { text: '混合编程', link: '/hybrid/' },
       // { 
@@ -110,10 +110,10 @@ module.exports = {
       '/guide/': [
         {
           title: '指南',
-          collapsable: true, // 可选的, 默认值是 true,
+          collapsable: false, // 可选的, 默认值是 true,
           sidebarDepth: 2,    // 可选的, 默认值是 1
           children: [
-            '',
+            '/guide/',
             '/guide/test',
           ],
         },
@@ -129,6 +129,28 @@ module.exports = {
         //   sidebarDepth: 2,    // 可选的, 默认值是 1
         //   children: traversed.getFileName(rootpath, '/guide/invisible/')
         // }
+      ],
+      '/oc/': [
+        {
+          title: 'Object-C',
+          collapsable: false, // 可选的, 默认值是 true,
+          sidebarDepth: 2,    // 可选的, 默认值是 1
+          children: [
+            '/oc/',
+            '/oc/compile-link'
+          ]
+        }
+      ],
+      '/swift/': [
+        {
+          title: 'Swift',
+          collapsable: false, // 可选的, 默认值是 true,
+          sidebarDepth: 2,    // 可选的, 默认值是 1
+          children: [
+            '/swift/',
+            // '/swift/compile-link'
+          ]
+        }
       ],
       '/update/': ['/update/'],
     }
