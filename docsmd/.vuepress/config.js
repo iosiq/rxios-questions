@@ -68,12 +68,12 @@ module.exports = {
   ],
 
   themeConfig: {
-    logo: '/qdmall_logo.png',
+    logo: '/xx_logo.png',
 
     // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
     repo: GitHubUrl,
     repoLabel: 'GitHub',
-    docsDir: 'docs',
+    docsDir: 'docsmd',
     // // 假如文档放在一个特定的分支下：
     docsBranch: 'dev',
     editLinks: true,
