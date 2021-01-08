@@ -137,7 +137,9 @@ module.exports = {
           sidebarDepth: 2,    // 可选的, 默认值是 1
           children: [
             '/oc/',
-            '/oc/compile-link'
+            '/oc/setting',
+            '/oc/build',
+            '/oc/compile-link',
           ]
         }
       ],
@@ -149,6 +151,18 @@ module.exports = {
           children: [
             '/swift/',
             // '/swift/compile-link'
+          ]
+        }
+      ],
+      '/code-editor/': [
+        {
+          title: '代码编辑器',
+          collapsable: false, // 可选的, 默认值是 true,
+          sidebarDepth: 2,    // 可选的, 默认值是 1
+          children: [
+            '/code-editor/',
+            '/code-editor/xcode',
+            '/code-editor/appCode'
           ]
         }
       ],
