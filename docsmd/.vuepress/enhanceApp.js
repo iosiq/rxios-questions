@@ -12,6 +12,7 @@ export default ({
   router.beforeEach((to, from, next) => {
     setTimeout(() => {
       // 百度 SPA 统计
+      // webpack-webpackPrefetch 异步加载js(代码分割) https://gitee.com/srxboys/learn-webpack-5/tree/master/class/24_%E6%87%92%E5%8A%A0%E8%BD%BDjs_lazyloading_copy_23%E7%9A%84demo3
       import('./common/baidu-spa').then(module => {
         let prettifyTable = module.default;
         if (to.path) prettifyTable(to.fullPath)

@@ -10,12 +10,15 @@ const path = require("path")
 const ROOT_PATH = path.dirname(__dirname) // 执行一次dirname将目录定位到docs目录
 const Traversed = require('./utils/traversed');
 
-const GitHubUrl = 'https://github.com/srxboys/rxios-questions'
-const description = 'ios|object-c|swift|面试题|笔试题';
+const GitHubUrl = 'https://github.com/appprogect/rxios-questions'
+const KEYS = ['ios', 'object-c', 'swift', '面试题', '笔试题']
+const PRESS_DESC = KEYS.join('|')
+const META_DESC = KEYS.join('，');
+const META_KEYWORDS = KEYS.join(',');
 
 module.exports = {
   title: 'IQ',
-  description, // 百度搜索 seo
+  description: PRESS_DESC, // 百度搜索 seo
 
   // 部署站点的基础路径 https://vuepress.vuejs.org/zh/config/#base
   base: '/rxios-questions/', // 项目名 in GitHub/Gitee
@@ -31,8 +34,9 @@ module.exports = {
     ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
-    
-    ['meta', { name: 'keywords', content: description}], // 权重不太高，但是只要有轻重我们也要利用。
+
+    ['meta', { name: 'description', content: META_DESC }],
+    ['meta', { name: 'keywords', content: META_KEYWORDS }], // 权重不太高，但是只要有轻重我们也要利用。
     // 数据统计: https://blog.csdn.net/lovefive5/article/details/102466820
     ['script', {type: 'text/javascript'}, `
         var _hmt = _hmt || [];
@@ -120,6 +124,7 @@ module.exports = {
           '/guide/cer/',
           '/guide/cer/app-store',
         ]),
+        autoSidebarAutoContent('App Store', '/guide/app-store/'),
         createSidebarContent('ci', [
           '/guide/ci/',
           '/guide/ci/github-actions',
@@ -130,17 +135,10 @@ module.exports = {
         ]),
       ],
       '/oc/': [
-        createSidebarContent('Object-C', [
-          '/oc/',
-          '/oc/setting',
-          '/oc/build',
-          '/oc/compile-link',
-        ]),
+        autoSidebarAutoContent('Object-C', '/oc/'),
       ],
       '/swift/': [
-        createSidebarContent('Swift', [
-          '/swift/',
-        ]),
+        autoSidebarAutoContent('Swift', '/swift/'),
       ],
       '/cross-platform/': [
         createSidebarContent('跨平台', [
@@ -163,7 +161,7 @@ function createSidebarContent(title, childrens) {
   return {
     title: title || '',
     collapsable: false, // 可选的, 默认值是 true,
-    sidebarDepth: 2,    // 可选的, 默认值是 1
+    sidebarDepth: 3,    // 可选的, 默认值是 1
     children: childrens || [],
   }
 }
@@ -173,7 +171,7 @@ function autoSidebarAutoContent(title, homePath) {
   return {
     title: title || '',
     collapsable: false, // 可选的, 默认值是 true,
-    sidebarDepth: 2,    // 可选的, 默认值是 1
+    sidebarDepth: 3,    // 可选的, 默认值是 1
     children: Traversed.getFileName(ROOT_PATH, homePath)
   }
 }

@@ -19,3 +19,4 @@ iOS 面试题整理
 ## 其他资料
 - [icofans](https://github.com/icofans)&nbsp;&nbsp;-&nbsp;&nbsp;[面试题总结](https://ios.nobady.cn/)
 - [简书 - 网最新iOS面试题-BAT篇(系列)](https://www.jianshu.com/nb/34904451)
+- [blog - iOS 程序员 6 级考试（答案和解释）](http://blog.sunnyxx.com/2014/03/06/ios_exam_0_key/)
