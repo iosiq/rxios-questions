@@ -7,8 +7,8 @@
  * https://www.vuepress.cn/zh/theme/default-theme-config.html#algolia-%E6%90%9C%E7%B4%A2
  */
 const path = require("path")
-// const rootpath = path.dirname(__dirname) // 执行一次dirname将目录定位到docs目录
-// const traversed = require('./utils/traversed');
+const ROOT_PATH = path.dirname(__dirname) // 执行一次dirname将目录定位到docs目录
+const Traversed = require('./utils/traversed');
 
 const GitHubUrl = 'https://github.com/srxboys/rxios-questions'
 const description = 'ios|object-c|swift|面试题|笔试题';
@@ -38,7 +38,7 @@ module.exports = {
         var _hmt = _hmt || [];
         (function() {
           var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?1a5d91d80ef8d90310c18a82333b9d6a";
+          hm.src = "https://hm.baidu.com/hm.js?f58a7e7702f7fce40bc42f23bce037c3";
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
         })();
@@ -87,7 +87,7 @@ module.exports = {
       { text: '指南', link: '/guide/' },
       { text: 'Object-C', link: '/oc/' },
       { text: 'Swift', link: '/swift/' },
-      { text: '混合编程', link: '/hybrid/' },
+      { text: '跨平台', link: '/cross-platform/' },
       // { 
       //   text: '了解更多',
       //   ariaLabel: 'Language Menu',
@@ -108,63 +108,46 @@ module.exports = {
     ],
     sidebar: {
       '/guide/': [
-        {
-          title: '指南',
-          collapsable: false, // 可选的, 默认值是 true,
-          sidebarDepth: 2,    // 可选的, 默认值是 1
-          children: [
-            '/guide/',
-            '/guide/test',
-          ],
-        },
-        // {
-        //   title: '弃用',
-        //   collapsable: true,  // 可选的, 默认值是 true,
-        //   sidebarDepth: 2,    // 可选的, 默认值是 1
-        //   children: traversed.getFileName(rootpath,'/guide/discard/')
-        // },
-        // {
-        //   title: '不可见页面',
-        //   collapsable: true,  // 可选的, 默认值是 true,
-        //   sidebarDepth: 2,    // 可选的, 默认值是 1
-        //   children: traversed.getFileName(rootpath, '/guide/invisible/')
-        // }
+        createSidebarContent('指南', [
+          '/guide/',
+        ]),
+        createSidebarContent('代码编辑器', [
+          '/guide/code-editor/',
+          '/guide/code-editor/xcode',
+          '/guide/code-editor/app-code',
+        ]),
+        createSidebarContent('证书', [
+          '/guide/cer/',
+          '/guide/cer/app-store',
+        ]),
+        createSidebarContent('ci', [
+          '/guide/ci/',
+          '/guide/ci/github-actions',
+          '/guide/ci/gitlab-ci',
+          '/guide/ci/jenkins',
+          '/guide/ci/shell',
+          '/guide/ci/nodejs',
+        ]),
       ],
       '/oc/': [
-        {
-          title: 'Object-C',
-          collapsable: false, // 可选的, 默认值是 true,
-          sidebarDepth: 2,    // 可选的, 默认值是 1
-          children: [
-            '/oc/',
-            '/oc/setting',
-            '/oc/build',
-            '/oc/compile-link',
-          ]
-        }
+        createSidebarContent('Object-C', [
+          '/oc/',
+          '/oc/setting',
+          '/oc/build',
+          '/oc/compile-link',
+        ]),
       ],
       '/swift/': [
-        {
-          title: 'Swift',
-          collapsable: false, // 可选的, 默认值是 true,
-          sidebarDepth: 2,    // 可选的, 默认值是 1
-          children: [
-            '/swift/',
-            // '/swift/compile-link'
-          ]
-        }
+        createSidebarContent('Swift', [
+          '/swift/',
+        ]),
       ],
-      '/code-editor/': [
-        {
-          title: '代码编辑器',
-          collapsable: false, // 可选的, 默认值是 true,
-          sidebarDepth: 2,    // 可选的, 默认值是 1
-          children: [
-            '/code-editor/',
-            '/code-editor/xcode',
-            '/code-editor/appCode'
-          ]
-        }
+      '/cross-platform/': [
+        createSidebarContent('跨平台', [
+          '/cross-platform/',
+        ]),
+        autoSidebarAutoContent('navite-app', '/cross-platform/native/'),
+        autoSidebarAutoContent('web-app', '/cross-platform/hybrid/'),
       ],
       '/update/': ['/update/'],
     }
@@ -173,4 +156,24 @@ module.exports = {
 
   port: 8081,
   // dest: ''
+}
+
+// 创建有 顺序排序的 侧边栏
+function createSidebarContent(title, childrens) {
+  return {
+    title: title || '',
+    collapsable: false, // 可选的, 默认值是 true,
+    sidebarDepth: 2,    // 可选的, 默认值是 1
+    children: childrens || [],
+  }
+}
+
+// 创建有 无序的侧边栏
+function autoSidebarAutoContent(title, homePath) {
+  return {
+    title: title || '',
+    collapsable: false, // 可选的, 默认值是 true,
+    sidebarDepth: 2,    // 可选的, 默认值是 1
+    children: Traversed.getFileName(ROOT_PATH, homePath)
+  }
 }

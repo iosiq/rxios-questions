@@ -15,3 +15,7 @@ iOS 面试题整理
 ## VuePress
 - [docs](https://vuepress.vuejs.org/zh/)
 - [GitHub](https://github.com/vuejs/vuepress)
+
+## 其他资料
+- [icofans](https://github.com/icofans)&nbsp;&nbsp;-&nbsp;&nbsp;[面试题总结](https://ios.nobady.cn/)
+- [简书 - 网最新iOS面试题-BAT篇(系列)](https://www.jianshu.com/nb/34904451)
