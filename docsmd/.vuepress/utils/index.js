@@ -1,6 +1,6 @@
 // https://www.jianshu.com/p/7b78f570fc4e
 const utils = {
-  genSidebar: function (title, children = [''], collapsable = true, sidebarDepth = 2) {
+  genSidebar: function (title, children = [''], collapsable = false, sidebarDepth = 3) {
     var arr = new Array();
     arr.push({
       title,

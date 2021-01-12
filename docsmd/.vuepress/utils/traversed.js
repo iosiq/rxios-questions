@@ -5,7 +5,7 @@ const path = require("path")
 // 排除检查的文件
 var excludes = ['.DS_Store']
 
-const traversed = {
+const Traversed = {
   getFileName: function (prefix, subdir) {
     let filenames = [];
     // let fileImg = /\.(png|jpe?g|gif|webp)(\?.*)?$/;
@@ -36,4 +36,4 @@ const traversed = {
     return filenames;
   }
 }
-module.exports = traversed;
+module.exports = Traversed;

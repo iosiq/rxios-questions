@@ -6,16 +6,18 @@
  * 采用 和 vue 官网的搜索，这个需要 域名
  * https://www.vuepress.cn/zh/theme/default-theme-config.html#algolia-%E6%90%9C%E7%B4%A2
  */
-const path = require("path")
-// const rootpath = path.dirname(__dirname) // 执行一次dirname将目录定位到docs目录
-// const traversed = require('./utils/traversed');
 
-const GitHubUrl = 'https://github.com/srxboys/rxios-questions'
-const description = 'ios|object-c|swift|面试题|笔试题';
+const SlideBar = require('./_slide')
+
+const GitHubUrl = 'https://github.com/appprogect/rxios-questions'
+const KEYS = ['ios', 'object-c', 'swift', '面试题', '笔试题']
+const PRESS_DESC = KEYS.join('|')
+const META_DESC = KEYS.join('，');
+const META_KEYWORDS = KEYS.join(',');
 
 module.exports = {
   title: 'IQ',
-  description, // 百度搜索 seo
+  description: PRESS_DESC, // 百度搜索 seo
 
   // 部署站点的基础路径 https://vuepress.vuejs.org/zh/config/#base
   base: '/rxios-questions/', // 项目名 in GitHub/Gitee
@@ -31,14 +33,15 @@ module.exports = {
     ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
-    
-    ['meta', { name: 'keywords', content: description}], // 权重不太高，但是只要有轻重我们也要利用。
+
+    ['meta', { name: 'description', content: META_DESC }],
+    ['meta', { name: 'keywords', content: META_KEYWORDS }], // 权重不太高，但是只要有轻重我们也要利用。
     // 数据统计: https://blog.csdn.net/lovefive5/article/details/102466820
     ['script', {type: 'text/javascript'}, `
         var _hmt = _hmt || [];
         (function() {
           var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?1a5d91d80ef8d90310c18a82333b9d6a";
+          hm.src = "https://hm.baidu.com/hm.js?f58a7e7702f7fce40bc42f23bce037c3";
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
         })();
@@ -87,7 +90,8 @@ module.exports = {
       { text: '指南', link: '/guide/' },
       { text: 'Object-C', link: '/oc/' },
       { text: 'Swift', link: '/swift/' },
-      { text: '混合编程', link: '/hybrid/' },
+      { text: '跨平台', link: '/cross-platform/' },
+      { text: '面试题', link: '/iq/' },
       // { 
       //   text: '了解更多',
       //   ariaLabel: 'Language Menu',
@@ -106,69 +110,7 @@ module.exports = {
       // },
       { text: '更新记录', link: '/update/' },
     ],
-    sidebar: {
-      '/guide/': [
-        {
-          title: '指南',
-          collapsable: false, // 可选的, 默认值是 true,
-          sidebarDepth: 2,    // 可选的, 默认值是 1
-          children: [
-            '/guide/',
-            '/guide/test',
-          ],
-        },
-        // {
-        //   title: '弃用',
-        //   collapsable: true,  // 可选的, 默认值是 true,
-        //   sidebarDepth: 2,    // 可选的, 默认值是 1
-        //   children: traversed.getFileName(rootpath,'/guide/discard/')
-        // },
-        // {
-        //   title: '不可见页面',
-        //   collapsable: true,  // 可选的, 默认值是 true,
-        //   sidebarDepth: 2,    // 可选的, 默认值是 1
-        //   children: traversed.getFileName(rootpath, '/guide/invisible/')
-        // }
-      ],
-      '/oc/': [
-        {
-          title: 'Object-C',
-          collapsable: false, // 可选的, 默认值是 true,
-          sidebarDepth: 2,    // 可选的, 默认值是 1
-          children: [
-            '/oc/',
-            '/oc/setting',
-            '/oc/build',
-            '/oc/compile-link',
-          ]
-        }
-      ],
-      '/swift/': [
-        {
-          title: 'Swift',
-          collapsable: false, // 可选的, 默认值是 true,
-          sidebarDepth: 2,    // 可选的, 默认值是 1
-          children: [
-            '/swift/',
-            // '/swift/compile-link'
-          ]
-        }
-      ],
-      '/code-editor/': [
-        {
-          title: '代码编辑器',
-          collapsable: false, // 可选的, 默认值是 true,
-          sidebarDepth: 2,    // 可选的, 默认值是 1
-          children: [
-            '/code-editor/',
-            '/code-editor/xcode',
-            '/code-editor/appCode'
-          ]
-        }
-      ],
-      '/update/': ['/update/'],
-    }
-   
+    sidebar: SlideBar
   },
 
   port: 8081,
