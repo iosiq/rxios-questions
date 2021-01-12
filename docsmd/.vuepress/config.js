@@ -6,9 +6,8 @@
  * 采用 和 vue 官网的搜索，这个需要 域名
  * https://www.vuepress.cn/zh/theme/default-theme-config.html#algolia-%E6%90%9C%E7%B4%A2
  */
-const path = require("path")
-const ROOT_PATH = path.dirname(__dirname) // 执行一次dirname将目录定位到docs目录
-const Traversed = require('./utils/traversed');
+
+const SlideBar = require('./_slide')
 
 const GitHubUrl = 'https://github.com/appprogect/rxios-questions'
 const KEYS = ['ios', 'object-c', 'swift', '面试题', '笔试题']
@@ -92,6 +91,7 @@ module.exports = {
       { text: 'Object-C', link: '/oc/' },
       { text: 'Swift', link: '/swift/' },
       { text: '跨平台', link: '/cross-platform/' },
+      { text: '面试题', link: '/iq/' },
       // { 
       //   text: '了解更多',
       //   ariaLabel: 'Language Menu',
@@ -110,68 +110,9 @@ module.exports = {
       // },
       { text: '更新记录', link: '/update/' },
     ],
-    sidebar: {
-      '/guide/': [
-        createSidebarContent('指南', [
-          '/guide/',
-        ]),
-        createSidebarContent('代码编辑器', [
-          '/guide/code-editor/',
-          '/guide/code-editor/xcode',
-          '/guide/code-editor/app-code',
-        ]),
-        createSidebarContent('证书', [
-          '/guide/cer/',
-          '/guide/cer/app-store',
-        ]),
-        autoSidebarAutoContent('App Store', '/guide/app-store/'),
-        createSidebarContent('ci', [
-          '/guide/ci/',
-          '/guide/ci/github-actions',
-          '/guide/ci/gitlab-ci',
-          '/guide/ci/jenkins',
-          '/guide/ci/shell',
-          '/guide/ci/nodejs',
-        ]),
-      ],
-      '/oc/': [
-        autoSidebarAutoContent('Object-C', '/oc/'),
-      ],
-      '/swift/': [
-        autoSidebarAutoContent('Swift', '/swift/'),
-      ],
-      '/cross-platform/': [
-        createSidebarContent('跨平台', [
-          '/cross-platform/',
-        ]),
-        autoSidebarAutoContent('navite-app', '/cross-platform/native/'),
-        autoSidebarAutoContent('web-app', '/cross-platform/hybrid/'),
-      ],
-      '/update/': ['/update/'],
-    }
-   
+    sidebar: SlideBar
   },
 
   port: 8081,
   // dest: ''
-}
-
-// 创建有 顺序排序的 侧边栏
-function createSidebarContent(title, childrens) {
-  return {
-    title: title || '',
-    collapsable: false, // 可选的, 默认值是 true,
-    sidebarDepth: 3,    // 可选的, 默认值是 1
-    children: childrens || [],
-  }
-}
-
-// 创建有 无序的侧边栏
-function autoSidebarAutoContent(title, homePath) {
-  return {
-    title: title || '',
-    collapsable: false, // 可选的, 默认值是 true,
-    sidebarDepth: 3,    // 可选的, 默认值是 1
-    children: Traversed.getFileName(ROOT_PATH, homePath)
-  }
 }
