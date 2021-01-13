@@ -12,11 +12,19 @@ iOS 面试题整理
   # 打包
   npm run build
 ```
+
+## 书写规范
+1. 在`docsmd`目录下写
+1. `docsmd` 的目录层级最多支持`3层`
+1. `docsmd` 的目录下所有`目录`以及`目录下的目录`，都要有`.name`文件，内容仅仅文字，不支持格式；用于该目录的`侧边栏名`
+
+
+
 ## VuePress
 - [docs](https://vuepress.vuejs.org/zh/)
 - [GitHub](https://github.com/vuejs/vuepress)
 
-## 其他资料
+## 参考资料
 >
 - [icofans](https://github.com/icofans)&nbsp;&nbsp;-&nbsp;&nbsp;[面试题总结](https://ios.nobady.cn/)
 - [知乎 - 精选iOS面试真题大全（3-5年）](https://zhuanlan.zhihu.com/p/55531475) 2019-01-23

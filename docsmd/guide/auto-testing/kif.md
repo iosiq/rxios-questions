@@ -1,3 +1,1 @@
-# Kif
-
-https://github.com/kif-framework/KIF
+# [Kif](https://github.com/kif-framework/KIF)

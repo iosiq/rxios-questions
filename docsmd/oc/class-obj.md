@@ -1,4 +1,5 @@
-# `类` vs `对象`
+# `Class` vs `NSObject` 
+`类` vs `对象`
 
 ## 参考资料
 - [blog - ibireme - Objective-C 中的类和对象](https://blog.ibireme.com/2013/11/25/objc-object/)

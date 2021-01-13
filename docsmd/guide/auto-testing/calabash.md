@@ -1,3 +1,1 @@
-# Calabash iOS
-
-https://github.com/calabash/calabash-ios
+# [Calabash iOS](https://github.com/calabash/calabash-ios)

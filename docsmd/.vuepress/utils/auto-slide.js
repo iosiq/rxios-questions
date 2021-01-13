@@ -1,10 +1,8 @@
-// https://www.jianshu.com/p/7b78f570fc4e
-
 const fs = require('fs');
 const path = require("path")
 // 排除检查的文件
 const excludes = ['.DS_Store']
-// const ChildrenExcludes = ['_nextSlides']
+const SlideBarName = '.name'
 
 const AutoSlide = {
   getSlide: function (prefix, subdir) {
@@ -17,14 +15,14 @@ const AutoSlide = {
       array.push(childrenObj)
     }
     array = array.concat(next)
-    console.log('\n\n next' + JSON.stringify(next) + '\n\n')
-    console.log('\n\narray =', array)
+    // console.log('\n\n next' + JSON.stringify(next) + '\n\n')
+    // console.log('\n\narray =', array)
 
     const slide = {}
     slide[subdir] = array
     console.log('\n\n\nslide=', slide)
 
-    // 让程序崩溃
+    // 让程序崩溃,查看输出日志内容
     // const abs = []
     // abs = abs.push('aa')
     return slide
@@ -41,7 +39,7 @@ const AutoSlide = {
         fullpath = rpath + "/" + file
         var fileinfo = fs.statSync(fullpath)
         if (fileinfo.isFile()) {
-          if(file === 'name.s') {
+          if(file === SlideBarName) {
             slideNamePath = fullpath
           } 
           else if (fileTypes.test(file) > 0) {
@@ -68,8 +66,8 @@ const AutoSlide = {
     const title = readSlideName(slideNamePath)
     const collapsable = false // 可选的, 默认值是 true,
     const sidebarDepth = 3    // 可选的, 默认值是 1
-    const slid = { children, title, _nextSlides, collapsable, sidebarDepth, '_name.s': title }
-    // console.log('\n\n' + JSON.stringify(slid) + '\n\n')
+    const slid = { children, title, _nextSlides, collapsable, sidebarDepth }
+    slid[SlideBarName] = title
     return slid;
   }
 }
