@@ -1,3 +1,1 @@
-# Appium
-
-https://github.com/appium/appium
+# [Appium](https://github.com/appium/appium)

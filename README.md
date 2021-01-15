@@ -12,11 +12,19 @@ iOS 面试题整理
   # 打包
   npm run build
 ```
+
+## 书写规范
+1. 在`docsmd`目录下写
+1. `docsmd` 的目录层级最多支持`3层`
+1. `docsmd` 的目录下所有`目录`以及`目录下的目录`，都要有`.name`文件，内容仅仅文字，不支持格式；用于该目录的`侧边栏名`
+
+
+
 ## VuePress
 - [docs](https://vuepress.vuejs.org/zh/)
 - [GitHub](https://github.com/vuejs/vuepress)
 
-## 其他资料
+## 参考资料
 >
 - [icofans](https://github.com/icofans)&nbsp;&nbsp;-&nbsp;&nbsp;[面试题总结](https://ios.nobady.cn/)
 - [知乎 - 精选iOS面试真题大全（3-5年）](https://zhuanlan.zhihu.com/p/55531475) 2019-01-23
@@ -34,7 +42,7 @@ iOS 面试题整理
 - [简书 - 史上最全的iOS面试题及答案](https://www.jianshu.com/p/494ac5ee1ab0) 2016.04.05 23:35:39
 - [简书 - 试卷 - 2018iOS面试合集文档](https://www.jianshu.com/p/6c56e3640323) 2018.03.11 20:47:57
 - [知乎 - 面试了10名开发者后，总结了50道iOS面试题](https://zhuanlan.zhihu.com/p/47747499) 2018-10-26
-- [知乎 - 简单易懂iOS面试篇](https://zhuanlan.zhihu.com/p/68665673)  2019-06-11
+- [知乎 - 简单易懂iOS面试篇](https://zhuanlan.zhihu.com/p/68665673) 2019-06-11
 - [知乎 - iOS面试 - 收藏集 - 掘金](https://zhuanlan.zhihu.com/p/27411056) 2017-06-15
 - [知乎 - 2020，300道高级iOS开发面试题（最新整理）](https://zhuanlan.zhihu.com/p/275986408) 2020-11-06
 - [知乎 - 2020年6月最新iOS面试题总结（答案篇）](https://zhuanlan.zhihu.com/p/198939499) 2020-08-26

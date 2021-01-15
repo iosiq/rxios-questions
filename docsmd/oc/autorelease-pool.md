@@ -4,12 +4,16 @@
 ## 原理
 `autorelease`本质上就是延迟调用`release`。
 
+配合[Runloop](/oc/runloop)
+
 ```objc
   NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-  NSString* nsstring;
-  char* cstring = "Hello CString";
+  NSString * nsstring;
+  char * cstring = "Hello CString";
+
+  // 这一行代码就是在给pool发送retain消息了
   nsstring = [NSString stringWithUTF8String:cstring];
-  // 这一行代码就是在给pool发送drain消息了
+
   [pool release];
 ```
 
@@ -35,6 +39,5 @@
 - [csdn - `Objective-C Autorelease Pool 的实现原理`](https://blog.csdn.net/weixin_30723433/article/details/99760791)  2015-06-24 15:03:00
 - [csdn - iOS 自动释放池一个小的面试题引发的简单学习](https://blog.csdn.net/u011217834/article/details/89668872)  2019-04-29 09:54:51
 - [csdn - `iOS 运行循环-RunLoop 和 自动释放池-autoreleasepoo 笔记`](https://blog.csdn.net/shihuboke/article/details/73865028) 2017-06-28 23:16:35
-- [csdn - `iOS AutoreleasePool（自动释放池子）的原理和实现`](https://blog.csdn.net/u012265444/article/details/106085672) 2020-05-12 23:09:06
+- [csdn - ~推荐看~ `iOS AutoreleasePool（自动释放池子）的原理和实现`](https://blog.csdn.net/u012265444/article/details/106085672) 2020-05-12 23:09:06 <b>推荐看</b>
 - [csdn - `ios自动释放池（autoreleasepool）`](https://blog.csdn.net/tiantian1980/article/details/8715344)  2013-03-25 09:18:57
-- [csdn - ]()

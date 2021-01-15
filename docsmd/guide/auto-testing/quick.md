@@ -1,3 +1,1 @@
-# Quick
-
-https://github.com/Quick/Quick
+# [Quick](https://github.com/Quick/Quick)

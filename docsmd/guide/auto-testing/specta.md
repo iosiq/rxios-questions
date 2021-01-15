@@ -1,3 +1,1 @@
-# Specta
-
-https://github.com/specta/specta
+# [Specta](https://github.com/specta/specta)

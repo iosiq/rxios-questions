@@ -7,9 +7,9 @@
  * https://www.vuepress.cn/zh/theme/default-theme-config.html#algolia-%E6%90%9C%E7%B4%A2
  */
 
-const SlideBar = require('./_slide')
+const vuePressSlide = require('./_slide')
 
-const GitHubUrl = 'https://github.com/appprogect/rxios-questions'
+const GitHubUrl = 'https://github.com/iosiq/rxios-questions'
 const KEYS = ['ios', 'object-c', 'swift', '面试题', '笔试题']
 const PRESS_DESC = KEYS.join('|')
 const META_DESC = KEYS.join('，');
@@ -110,7 +110,9 @@ module.exports = {
       // },
       { text: '更新记录', link: '/update/' },
     ],
-    sidebar: SlideBar
+
+    // 下面是方法，可以动态更新 侧边栏
+    sidebar: vuePressSlide.config()
   },
 
   port: 8081,

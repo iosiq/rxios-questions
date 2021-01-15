@@ -1,3 +1,1 @@
-# Kiwi
-
-https://github.com/kiwi-bdd/Kiwi
+# [Kiwi](https://github.com/kiwi-bdd/Kiwi)
