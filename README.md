@@ -42,7 +42,7 @@ iOS 面试题整理
 - [简书 - 史上最全的iOS面试题及答案](https://www.jianshu.com/p/494ac5ee1ab0) 2016.04.05 23:35:39
 - [简书 - 试卷 - 2018iOS面试合集文档](https://www.jianshu.com/p/6c56e3640323) 2018.03.11 20:47:57
 - [知乎 - 面试了10名开发者后，总结了50道iOS面试题](https://zhuanlan.zhihu.com/p/47747499) 2018-10-26
-- [知乎 - 简单易懂iOS面试篇](https://zhuanlan.zhihu.com/p/68665673)  2019-06-11
+- [知乎 - 简单易懂iOS面试篇](https://zhuanlan.zhihu.com/p/68665673) 2019-06-11
 - [知乎 - iOS面试 - 收藏集 - 掘金](https://zhuanlan.zhihu.com/p/27411056) 2017-06-15
 - [知乎 - 2020，300道高级iOS开发面试题（最新整理）](https://zhuanlan.zhihu.com/p/275986408) 2020-11-06
 - [知乎 - 2020年6月最新iOS面试题总结（答案篇）](https://zhuanlan.zhihu.com/p/198939499) 2020-08-26
