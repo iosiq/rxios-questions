@@ -1,4 +1,4 @@
-# `Class` vs `NSObject` 
+# `Class` vs `NSObject`
 `类` vs `对象`
 
 ## 参考资料
