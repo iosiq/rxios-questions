@@ -1,4 +1,4 @@
-# 线程
+# thread - 线程
 
 ## thread
 

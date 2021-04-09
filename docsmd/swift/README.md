@@ -40,7 +40,7 @@ Swift特有许多其他的功能，使你的代码更传神：
 - [Apple Developer documentation](https://developer.apple.com/documentation/)
 - [中文翻译(Swift翻译组)](https://swiftgg.gitbook.io/swift)
 
-## 官方开源 - demo
+## 官方开源 - 代码
 - [Swift - Resources](https://developer.apple.com/swift/resources/)
 - [Documentation Archive](https://developer.apple.com/library/archive/navigation/)
 - [opensource](https://opensource.apple.com/)
