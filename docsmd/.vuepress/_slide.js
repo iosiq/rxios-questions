@@ -11,6 +11,7 @@ const vuePressSlide = {
     sidebar = createSide(sidebar, '/swift/')
     sidebar = createSide(sidebar, '/iq/')
     sidebar = createSide(sidebar, '/update/')
+    sidebar = createSide(sidebar, '/article/')
     return sidebar
   }
 }
